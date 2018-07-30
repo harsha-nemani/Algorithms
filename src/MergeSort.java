@@ -82,6 +82,10 @@ public class MergeSort {
         MergeSort msrot = new MergeSort();
 
         msrot.sort(arr,0,arr.length - 1);
+		
+		for(int x = 0 ; x < arr.length; x++){
+			System.out.print(arr[x] + " ");
+		}
 
         printArray(arr);
 
