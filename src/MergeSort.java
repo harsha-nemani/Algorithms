@@ -1,66 +1,66 @@
 public class MergeSort {
 
-    public void merge(int arr[], int l, int m, int r){
+    public void merge(int[] arr, int leftIndex, int middleIndex, int rightIndex){
 
         /*Finds size of left-side array*/
-        int n1= m - l + 1;
+        int leftArrayLen= middleIndex - leftIndex + 1;
 
         /*Finds size of right-side array*/
-        int n2= r - m;
+        int rightArrayLen= rightIndex - middleIndex;
 
         /*Declare Left and Right temporary arrays*/
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int[] LeftArray = new int[leftArrayLen];
+        int[] RightArray = new int[rightArrayLen];
 
         /*Copy data to respective temporary arrays*/
-        for(int i=0; i<n1; i++){
-            L[i] = arr[l + i];
+        for(int i=0; i<leftArrayLen; i++){
+            LeftArray[i] = arr[leftIndex + i];
         }
-        for(int j=0; j<n2; j++){
-            R[j] = arr[m + 1 + j];
+
+        for(int j=0; j<rightArrayLen; j++){
+            RightArray[j] = arr[middleIndex + 1 + j];
         }
 
         /*Initial indexes for two sub-arrays*/
         int i=0, j=0;
+        int k=leftIndex;
 
-        int k=l;
+        /*Copying smaller element from sorted array to main array */
+        while( i < leftArrayLen && j < rightArrayLen){
 
-        while( i < n1 && j < n2){
-
-            if(L[i] <= R[j] ){
-                arr[k] = L[i];
+            if(LeftArray[i] <= RightArray[j] ){
+                arr[k] = LeftArray[i];
                 i++;
             }
             else{
-                arr[k] = R[j];
+                arr[k] = RightArray[j];
                 j++;
             }
             k++;
         }
 
-        while( i < n1 ){
-            arr[k] = L[i];
+        /*Copying leftover elements of Left subarray to main array*/
+        while( i < leftArrayLen ){
+            arr[k] = LeftArray[i];
             i++;
             k++;
         }
 
-        while( j <n2 ){
-            arr[k] = R[j];
+        /*Copying leftover elements of Right subarray to main array*/
+        while( j <rightArrayLen ){
+            arr[k] = RightArray[j];
             j++;
             k++;
         }
 
     }
 
-    public void sort(int []arr, int l, int r){
-
-        if( l < r) {
-            int m = (l + r) / 2;
-
-            sort(arr, l, m);
-            sort(arr, (m + 1), r);
-
-            merge(arr, l, m, r);
+    public void sort(int []arr, int leftIndex, int rightIndex){
+        if( leftIndex < rightIndex) {
+            int middleIndex = (leftIndex + rightIndex) / 2;
+            sort(arr, leftIndex, middleIndex);
+            sort(arr, (middleIndex + 1), rightIndex);
+            merge(arr, leftIndex, middleIndex, rightIndex);
         }
 
     }
@@ -71,23 +71,5 @@ public class MergeSort {
         for (int i=0; i<n; ++i)
             System.out.print(arr[i] + " ");
         System.out.println();
-    }
-
-    public static void main(String[] args) {
-
-        int arr[] = {28,4,56,45};
-
-        printArray(arr);
-
-        MergeSort msrot = new MergeSort();
-
-        msrot.sort(arr,0,arr.length - 1);
-		
-		for(int x = 0 ; x < arr.length; x++){
-			System.out.print(arr[x] + " ");
-		}
-
-        printArray(arr);
-
     }
 }
