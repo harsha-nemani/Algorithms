@@ -3,15 +3,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         int[] arr = {31, 41, 59, 26, 41, 58, 23};
-        /*InsertionSort ins = new InsertionSort();
-        ins.insertSortDecreasingOrder(arr);
-        System.out.println(Arrays.toString(arr));*/
 
-        /*MergeSort mergesort = new MergeSort();
-        mergesort.sort(arr,0,arr.length - 1);*/
-
-        QuickSort quickSort = new QuickSort();
-        quickSort.quickSort(arr, 0, arr.length-1);
+        SelectionSort selectionSort = new SelectionSort();
+        selectionSort.selectionSort(arr);
 
         System.out.println(Arrays.toString(arr));
     }
