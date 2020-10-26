@@ -1,5 +1,12 @@
 public class InsertionSort {
 
+    /*
+     * Worst Case = O(n^2)
+     * Best Case = O(n)
+     * Average Case = O(n^2)
+     *
+     * Space Complexity = 0(1)
+     * */
     void insertSortIncreasingOrder(int[] arr){
         for(int j=1; j<arr.length;j++){
             int key = arr[j];

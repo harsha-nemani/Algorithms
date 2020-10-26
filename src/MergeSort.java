@@ -1,5 +1,12 @@
 public class MergeSort {
 
+    /*
+     * Worst Case = O(n * log(n))
+     * Best Case = O(n * log(n))
+     * Average Case = O(n * log(n))
+     *
+     * Space Complexity = 0(n)
+     * */
     public void merge(int[] arr, int leftIndex, int middleIndex, int rightIndex){
 
         /*Finds size of left-side array*/

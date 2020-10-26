@@ -1,5 +1,12 @@
 public class QuickSort {
 
+    /*
+     * Worst Case = O(n^2)
+     * Best Case = O(n * log(n))
+     * Average Case = O(n * log(n))
+     *
+     * Space Complexity = 0(log(n))
+     * */
     void quickSort(int[] array, int low, int high){
         if(low < high){
 

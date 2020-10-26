@@ -1,5 +1,12 @@
 public class SelectionSort {
 
+    /*
+    * Worst Case = O(n^2)
+    * Best Case = O(n^2)
+    * Average Case = O(n^2)
+    *
+    * Space Complexity = 0(1)
+    * */
     void selectionSort(int[] array){
         int arrSize = array.length;
 
