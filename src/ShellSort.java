@@ -1,4 +1,11 @@
 public class ShellSort {
+    /*
+     * Worst Case = less than or equal to O(n^2)
+     * Best Case = O(n * log(n))
+     * Average Case = O(n * log(n))
+     *
+     * Space Complexity = o(1)
+     * */
     public void shellSort(int array[]){
         int size = array.length;
         int temp;
